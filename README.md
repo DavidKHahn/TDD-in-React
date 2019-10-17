@@ -21,3 +21,8 @@
     yarn add --dev eslint-plugin-react
 
     yarn add --dev eslint-plugin-cypress
+
+**Babel**: JS Compiler mainly used to convert ECMAScript syntax for compatibility
+
+    yarn add --dev @babel/plugin-proposal-class-properties
+
