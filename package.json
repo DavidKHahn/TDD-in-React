@@ -14,10 +14,15 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-react": "^7.6.3",
     "babel-core": "^7.0.0-0",
+    "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "cypress": "^3.4.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
+    "eslint": "^6.5.1",
+    "eslint-config-codingitwrong": "^0.1.4",
+    "eslint-plugin-jest": "^22.19.0",
+    "eslint-plugin-react": "^7.16.0",
     "jest": "^24.9.0",
     "parcel-bundler": "^1.12.4"
   },
@@ -28,6 +33,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
+    "lint": "eslint src/**/*.js test/**/*.js",
     "unit": "jest test/** /* .spec.js",
     "e2e": "cypress open"
   },
