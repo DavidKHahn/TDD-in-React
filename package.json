@@ -47,6 +47,6 @@
     "react-dom": "^16.10.2"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>test/setup.js"
+    "setupFilesAfterEnv": ["<rootDir>test/setup.js"]
   }
 }
