@@ -19,3 +19,5 @@
     yarn add --dev eslint eslint-config-codingitwrong babel-eslint eslint-plugin-jest
 
     yarn add --dev eslint-plugin-react
+
+    yarn add --dev eslint-plugin-cypress

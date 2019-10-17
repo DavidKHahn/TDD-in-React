@@ -21,6 +21,7 @@
     "enzyme-adapter-react-16": "^1.15.1",
     "eslint": "^6.5.1",
     "eslint-config-codingitwrong": "^0.1.4",
+    "eslint-plugin-cypress": "^2.7.0",
     "eslint-plugin-jest": "^22.19.0",
     "eslint-plugin-react": "^7.16.0",
     "jest": "^24.9.0",
@@ -33,7 +34,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
-    "lint": "eslint cypress/**/*.js src/**/*.js test/**/*.js",
+    "lint": "eslint cypress/integration/**/*.js src/**/*.js test/**/*.js",
     "unit": "jest test/**/*.spec.js",
     "e2e": "cypress open"
   },

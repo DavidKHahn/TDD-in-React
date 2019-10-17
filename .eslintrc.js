@@ -1,10 +1,13 @@
 module.exports = {
     extends: [
-        'codingitwrong'
+        'codingitwrong',
+        "plugin:cypress/recommended"
     ],
     parser: 'babel-eslint',
     plugins: [
-        'jest'
+        'jest',
+        'react',
+        'cypress'
     ],
     env: {
         'browser': true,
