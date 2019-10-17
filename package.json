@@ -1,0 +1,31 @@
+{
+  "name": "tdd-in-react",
+  "version": "0.1.0",
+  "description": "TDD React application",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/DavidKHahn/TDD-in-React.git"
+  },
+  "author": "David Hahn",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "bugs": {
+    "url": "https://github.com/DavidKHahn/TDD-in-React/issues"
+  },
+  "homepage": "https://github.com/DavidKHahn/TDD-in-React#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "keywords": [
+    "react",
+    "tdd"
+  ],
+  "dependencies": {
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  }
+}
