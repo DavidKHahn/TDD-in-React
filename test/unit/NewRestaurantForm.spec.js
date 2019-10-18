@@ -3,12 +3,21 @@ import React from 'react';
 import NewRestaurantForm from '../../src/NewRestaurantForm';
 
 describe('NewRestaurantForm', () => {
-    describe('clicking the save button', () => {
-        it('calls the onSave handler', () => {
-            // jest.fn() is a mock fn (allow us to assert whether the fn was called)
-            const saveHandler = jest.fn();
+  describe('clicking the save button', () => {
+    it('calls the onSave handler', () => {
+      // jest.fn() is a mock fn (allow us to assert whether the fn was called)
+      const saveHandler = jest.fn();
 
-            mount(<NewRestaurantForm onSave={saveHandler} />);
-        })
+      const wrapper = mount(<NewRestaurantForm onSave={saveHandler} />);
+      wrapper
+        .find('[data-test="newRestaurantName"]')
+        .simulate('change', { target: { value: 'Sushi Place' } });
+
+      wrapper
+        .find('[data-test="saveNewRestaurantButton"]')
+        .simulate('click');
+
+      expect(saveHandler).toHaveBeenCalledWith('Sushi Place');
     });
+  });
 });
