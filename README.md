@@ -2,7 +2,7 @@
 
 ### Tools Used:
 
-**Cypress**: Mainly used for end-to-end testing
+**Cypress**: Mainly used for end-to-end testing (similar to Mocha for test runner, Chai for expectations, Sinon for test doubles except Cypress runs all of these under the hood)
 
     yarn add --dev cypress
 
