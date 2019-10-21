@@ -26,3 +26,13 @@
 
     yarn add --dev @babel/plugin-proposal-class-properties
 
+**Circle CI**:
+
+`chmod +x bin/cypress` in master (CLI) after creating a bin folder in root of project with a cypress file containing:
+
+    #!/bin/bash
+
+    yarn start & wait-on http://localhost:1234
+    $(yarn bin)/cypress run
+
+Return to CircleCI dashboard and run setup for the project being used.
