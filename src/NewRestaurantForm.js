@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'react-materialize';
 
 export default class NewRestaurantForm extends Component {
     state = { inputText: ' ' };
@@ -24,12 +25,12 @@ export default class NewRestaurantForm extends Component {
             onChange={this.handleTextChange}
             data-test="newRestaurantName"
           />
-          <button
+          <Button
             data-test="saveNewRestaurantButton"
             onClick={this.handleSave}
           >
                     Save
-          </button>
+          </Button>
         </div>
       );
     }
