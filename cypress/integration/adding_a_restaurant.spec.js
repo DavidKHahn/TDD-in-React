@@ -14,6 +14,9 @@ describe('adding a restaurant', () => {
     // modal allows adding restaurant
     cy.get('[data-test="addRestaurantButton"]').click();
 
+    // modal focuses on text field when appears
+    cy.focused().should();
+
     cy.get('[data-test="newRestaurantName"]').type(restaurantName);
     // confirm field has gone away
     cy.get('[data-test="saveNewRestaurantButton"]').click();

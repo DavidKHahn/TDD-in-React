@@ -4,6 +4,10 @@ import { Button, Input, Row } from 'react-materialize';
 export default class NewRestaurantForm extends Component {
     state = { inputText: ' ' };
 
+    // componentDidMount() {
+    //   this.nameInput.input.focus()
+    // }
+
     handleTextChange = (event) => {
       this.setState({ inputText: event.target.value });
     }
@@ -25,6 +29,7 @@ export default class NewRestaurantForm extends Component {
             value={inputText}
             onChange={this.handleTextChange}
             data-test="newRestaurantName"
+            ref={input => this.nameInput = input}
           />
           <Button
             s={12} m={8} l={2}
