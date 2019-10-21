@@ -1,12 +1,9 @@
+import { Formik } from 'formik';
 import React, { Component } from 'react';
 import { Button, Input, Row } from 'react-materialize';
 
 export default class NewRestaurantForm extends Component {
     state = { inputText: ' ' };
-
-    // componentDidMount() {
-    //   this.nameInput.input.focus()
-    // }
 
     handleTextChange = (event) => {
       this.setState({ inputText: event.target.value });
@@ -24,7 +21,12 @@ export default class NewRestaurantForm extends Component {
       const { inputText } = this.state;
       return (
         <Row>
-          <Input
+          <Formik
+            initialValues={{ inputText: '' }}
+          >
+            {({ values, handleChange }) => (
+              <form>
+              <Input
             s={12} m={8} l={10}
             label="Restaurant Name"
             value={inputText}
@@ -38,6 +40,9 @@ export default class NewRestaurantForm extends Component {
             onClick={this.handleSave}>
               Save
           </Button>
+          </form>
+            )}
+          </Formik>
         </Row>
       );
     }
