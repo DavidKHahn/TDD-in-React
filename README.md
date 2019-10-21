@@ -21,6 +21,18 @@
     yarn add --dev eslint-plugin-react
 
     yarn add --dev eslint-plugin-cypress
+    
+**Materialize**: Materialize CSS for UI designs (https://materializecss.com/getting-started.html)
+    
+    Include inside index.html: 
+    
+    <!-- Import Google Icon Font -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Import materialize.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
 **Babel**: JS Compiler mainly used to convert ECMAScript syntax for compatibility
 
