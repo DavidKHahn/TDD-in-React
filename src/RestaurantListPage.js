@@ -5,33 +5,34 @@ import RestaurantList from './RestaurantList';
 
 export default class RestaurantListPage extends Component {
     state = {
-        restaurantNames: []
-      }
+      restaurantNames: [],
+    }
 
 handleAddRestaurant = newRestaurantName => {
-    this.setState(state => ({
-      restaurantNames: [ newRestaurantName, ...state.restaurantNames]
-    }));
-    $("#addRestaurantModal").modal("close");
+  this.setState(state => ({
+    restaurantNames: [newRestaurantName, ...state.restaurantNames],
+  }));
+  $("#addRestaurantModal").modal("close");
 }
 
-  render() {
-    const { restaurantNames } = this.state;
-    return (
-      <div>
-        <Modal
-          id="addRestaurantModal"
-          header="New Restaurant"
-          trigger={
-            <Button data-test="addRestaurantButton">Add Restaurant</Button>
-          }
-        >
-          <NewRestaurantForm onSave={this.handleAddRestaurant} />
-        </Modal>
-        <Row>
-          <RestaurantList restaurantNames={restaurantNames} />
-        </Row>
-      </div>
-    );
-  }
+render() {
+  const { restaurantNames } = this.state;
+  return (
+    <div>
+      <Modal
+        id="addRestaurantModal"
+        data-test="addRestaurantModal"
+        header="New Restaurant"
+        trigger={
+          <Button data-test="addRestaurantButton">Add Restaurant</Button>
+        }
+      >
+        <NewRestaurantForm onSave={this.handleAddRestaurant} />
+      </Modal>
+      <Row>
+        <RestaurantList restaurantNames={restaurantNames} />
+      </Row>
+    </div>
+  );
+}
 }
