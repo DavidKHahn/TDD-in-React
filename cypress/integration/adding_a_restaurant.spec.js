@@ -38,6 +38,8 @@ describe('adding a restaurant', () => {
   }
 
   function modalAllowsAddingRestaurant(restaurantName) {
+    cy.get('[data-testid="addRestaurantButton"]').click();
+
     cy.get('[data-testid="newRestaurantName"]').type(restaurantName);
 
     cy.get('[data-testid="saveNewRestaurantButton"]').click();
