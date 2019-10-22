@@ -61,8 +61,8 @@ describe('adding a restaurant', () => {
     cy.get('[data-testid="addRestaurantButton"]').click();
 
     cy.get('label[for="restaurantName"][data-error="Cannot be blank"]')
-      .should("not be.visible");
+      .should("not.be.visible");
 
-      cy.get('[data-testid="cancelAddRestaurantButton"]').click();
+    cy.get('[data-testid="cancelAddRestaurantButton"]').click();
     }
 });

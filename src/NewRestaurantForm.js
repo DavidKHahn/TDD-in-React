@@ -37,7 +37,6 @@ export default class NewRestaurantForm extends Component {
       s={12}
       label="Restaurant Name"
       id="restaurantName"
-      name="restaurantName"
       value={values.restaurantName}
       error={errors.restaurantName}
       onChange={handleChange}
