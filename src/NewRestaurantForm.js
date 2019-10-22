@@ -10,6 +10,7 @@ export default class NewRestaurantForm extends Component {
     }
     return errors;
   }
+
   handleSave = (values, { resetForm }) => {
     const { restaurantName } = values;
     const { onSave } = this.props;
@@ -18,7 +19,12 @@ export default class NewRestaurantForm extends Component {
     resetForm();
   }
 
-  renderForm = ({ values, errors, handleChange, handleSubmit }) => (
+  handleCancel = ({ resetForm }) => () => {
+    resetForm();
+    this.props.onCancel();
+  }
+
+  renderForm = ({ values, errors, handleChange, handleSubmit, resetForm }) => (
     <form onSubmit={handleSubmit}>
     <Row>
     <Input
@@ -33,6 +39,13 @@ export default class NewRestaurantForm extends Component {
     />
 </Row>
 <Row>
+<Button
+    type="button"
+    data-test="cancelAddRestaurantButton"
+    onClick={this.handleCancel({ resetForm })}
+    >
+      Cancel
+  </Button>
   <Button
     type="submit"
     data-test="saveNewRestaurantButton"

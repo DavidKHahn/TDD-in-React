@@ -15,6 +15,10 @@ handleAddRestaurant = newRestaurantName => {
   $("#addRestaurantModal").modal("close");
 }
 
+handleCancelAddRestaurant = () => {
+  $('#addRestaurantModal').modal('close');
+}
+
 render() {
   const { restaurantNames } = this.state;
   return (
@@ -27,7 +31,10 @@ render() {
           <Button data-test="addRestaurantButton">Add Restaurant</Button>
         }
       >
-        <NewRestaurantForm onSave={this.handleAddRestaurant} />
+        <NewRestaurantForm
+          onSave={this.handleAddRestaurant}
+          onCancel={this.handleCancelAddRestaurant}
+          />
       </Modal>
       <Row>
         <RestaurantList restaurantNames={restaurantNames} />
