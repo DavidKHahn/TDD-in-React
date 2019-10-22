@@ -7,7 +7,7 @@ describe('NewRestaurantForm', () => {
     let saveHandler;
     let wrapper;
 
-    beforeEach(() => {
+    beforeEach((done) => {
     // jest.fn() is a mock fn (allow us to assert whether the fn was called)
       saveHandler = jest.fn();
 
@@ -15,12 +15,19 @@ describe('NewRestaurantForm', () => {
 
       wrapper
         .find('input[data-test="newRestaurantName"]')
-        .simulate('change', { target: { value: 'Sushi Place' } });
+        .simulate('change', {
+          target: {
+            id: 'restaurantName',
+            value: 'Sushi Place'
+          }
+        });
 
-      wrapper
-        .find('button[data-test="saveNewRestaurantButton"]')
-        .simulate('click');
-    })
+      const result = wrapper
+        .find('form')
+        .simulate('submit');
+
+        setTimeout(done, 0);
+      });
 
     it('calls the onSave handler', () => {
       expect(saveHandler).toHaveBeenCalledWith('Sushi Place');
