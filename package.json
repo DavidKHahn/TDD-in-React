@@ -26,7 +26,8 @@
     "eslint-plugin-jest": "^22.19.0",
     "eslint-plugin-react": "^7.16.0",
     "jest": "^24.9.0",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "react-testing-library": "^5.2.3"
   },
   "bugs": {
     "url": "https://github.com/DavidKHahn/TDD-in-React/issues"
