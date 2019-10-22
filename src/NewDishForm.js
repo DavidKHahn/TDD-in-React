@@ -3,12 +3,18 @@ import React, { Component } from 'react';
 import { Input, Row } from 'react-materialize';
 
 export default class NewDishForm extends Component {
+    handleSave = (values) => {
+        const { dishName } = values;
+        const { onSave } = this.props;
+        onSave(dishName);
+    }
 
     renderForm = ({
         values,
-        handleChange
+        handleChange,
+        handleSubmit
     }) => (
-        <form>
+        <form onSubmit={handleSubmit}>
             <Row>
                 <Input
                     s={12}
@@ -34,6 +40,7 @@ export default class NewDishForm extends Component {
         return (
             <Formik
                 initialValues={{ dishName: '' }}
+                onSubmit={this.handleSave}
             >
                 {this.renderForm}
             </Formik>
