@@ -35,6 +35,8 @@ describe('adding a restaurant', () => {
 
     cy.get('label[for="restaurantName"][data-error="Cannot be blank"]')
       .should("be.visible");
+
+    cy.get('[data-testid="cancelAddRestaurantButton"]').click();
   }
 
   function modalAllowsAddingRestaurant(restaurantName) {
@@ -54,11 +56,13 @@ describe('adding a restaurant', () => {
 
     cy.get('[data-testid="saveNewRestaurantButton"]').click();
 
-    cy.get('[data-testid="addRestaurantModal"] button.modal-close').click();
+    cy.get('[data-testid="cancelAddRestaurantButton"]').click();
+
+    cy.get('[data-testid="addRestaurantButton"]').click();
 
     cy.get('label[for="restaurantName"][data-error="Cannot be blank"]')
-    .should("not be.visible");
+      .should("not be.visible");
 
-    cy.get('[data-testid="addRestaurantModal"] button.modal-close').click();
-  }
+      cy.get('[data-testid="cancelAddRestaurantButton"]').click();
+    }
 });
