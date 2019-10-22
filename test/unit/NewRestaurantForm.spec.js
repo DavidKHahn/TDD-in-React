@@ -11,10 +11,11 @@ describe('NewRestaurantForm', () => {
     // jest.fn() is a mock fn (allow us to assert whether the fn was called)
       saveHandler = jest.fn();
 
-      ({ getByTestId } = render(<NewRestaurantForm onSave={saveHandler} />));
+      ({ getByTestId } = render(<NewRestaurantForm
+    onSave={saveHandler} />));
 
       fireEvent.change(
-        getTestId('newRestaurantName'),
+        getByTestId('newRestaurantName'),
         {
           target: {
             id: 'restaurantName',

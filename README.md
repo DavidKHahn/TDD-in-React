@@ -21,11 +21,11 @@
     yarn add --dev eslint-plugin-react
 
     yarn add --dev eslint-plugin-cypress
-    
+
 **Materialize**: Materialize CSS for UI designs (https://materializecss.com/getting-started.html)
-    
-    Include inside index.html: 
-    
+
+    Include inside index.html:
+
     <!-- Import Google Icon Font -->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Import materialize.css -->
@@ -48,3 +48,8 @@
     $(yarn bin)/cypress run
 
 Return to CircleCI dashboard and run setup for the project being used.
+
+**Formik**:
+
+Using Formik for form validation: https://github.com/jaredpalmer/formik
+

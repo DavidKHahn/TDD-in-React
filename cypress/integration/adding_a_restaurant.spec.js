@@ -23,7 +23,7 @@ describe('adding a restaurant', () => {
   function modalCanBeCancelled() {
     cy.get('[data-testid="addRestaurantButton"]').click();
 
-    cy.get('[data-testid="addRestaurantModal"] button.modal-close').click();
+    cy.get('[data-testid="cancelAddRestaurantButton"]').click();
 
     cy.get('[data-testid="newRestaurantName"]').should("not.be.visible");
   }

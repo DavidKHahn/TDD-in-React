@@ -27,6 +27,7 @@ render() {
         id="addRestaurantModal"
         data-test="addRestaurantModal"
         header="New Restaurant"
+        actions={[]}
         trigger={
           <Button data-testid="addRestaurantButton">Add Restaurant</Button>
         }
