@@ -21,15 +21,15 @@ export default class NewRestaurantForm extends Component {
   renderForm = ({ values, errors, handleChange, handleSubmit }) => (
     <form onSubmit={handleSubmit}>
     <Input
-  s={12} m={8} l={10}
-  label="Restaurant Name"
-  id="restaurantName"
-  name="restaurantName"
-  value={values.restaurantName}
-  error={errors.restaurantName}
-  onChange={handleChange}
-  data-test="newRestaurantName"
-/>
+      s={12} m={8} l={10}
+      label="Restaurant Name"
+      id="restaurantName"
+      name="restaurantName"
+      value={values.restaurantName}
+      error={errors.restaurantName}
+      onChange={handleChange}
+      data-test="newRestaurantName"
+    />
 <Button
   type="submit"
   s={12} m={8} l={2}
