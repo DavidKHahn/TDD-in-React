@@ -19,7 +19,7 @@ export default class NewRestaurantForm extends Component {
   }
 
   renderForm = ({ values, errors, handleChange, handleSubmit }) => (
-    <form handleSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
     <Input
   s={12} m={8} l={10}
   label="Restaurant Name"
