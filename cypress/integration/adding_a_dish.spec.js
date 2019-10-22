@@ -1,24 +1,25 @@
 describe('adding a dish', () => {
     it('displays the dish in the list', () => {
-        const dishName = 'Tuna Sushi';
+        const restaurantName = 'Sushi Place';
+        const dishName = "Tuna Sashimi";
 
         cy.visit("http://localhost:1234");
 
-        addRestaurant(dishName);
-        goToRestaurantPage(dishName);
+        addRestaurant(restaurantName);
+        goToRestaurantPage(restaurantName);
         modalNotShownAtTheStart();
         modalAllowsAddingDish(dishName);
     });
 
 
-  function addRestaurant(dishName) {
+  function addRestaurant(restaurantName) {
     cy.get('[data-testid="addRestaurantButton"]').click();
-    cy.get('[data-testid="newdishName"]').type(dishName);
+    cy.get('[data-testid="newRestaurantName"]').type(restaurantName);
     cy.get('[data-testid="saveNewRestaurantButton"]').click();
   }
 
-  function goToRestaurantPage(dishName) {
-    cy.contains(dishName).click();
+  function goToRestaurantPage(restaurantName) {
+    cy.contains(restaurantName).click();
   }
 
   function modalNotShownAtTheStart() {
@@ -28,7 +29,7 @@ describe('adding a dish', () => {
   function modalAllowsAddingDish(dishName) {
     cy.get('[data-testid="addDishButton"]').click();
     cy.get('[data-testid="newDishName"]').type(dishName);
-    cy.get('[data-testid="saveNewDishtButton"]').click();
+    cy.get('[data-testid="saveNewDishButton"]').click();
     cy.get('[data-testid="newDishName"]').should("not.be.visible");
     cy.contains(dishName);
   }

@@ -27,7 +27,7 @@ export default class NewDishForm extends Component {
             </Row>
             <Row>
                 <Button
-                    // type="submit"
+                    type="submit"
                     data-testid="saveNewDishButton"
                 >
                     Save
