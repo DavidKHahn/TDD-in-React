@@ -5,9 +5,9 @@ describe('adding a restaurant', () => {
     cy.visit('http://localhost:1234');
     // modal not shown at start
     cy.get('[data-test="newRestaurantName"]').should('not.be.visible');
-
+    // modal can be cancelled
     cy.get('[data-test="addRestaurantButton"]').click();
-    // click save
+
     cy.get('[data-test="addRestaurantModal"] button.modal-close').click();
 
     cy.get('[data-test="newRestaurantName"]').should("not.be.visible");
@@ -17,8 +17,8 @@ describe('adding a restaurant', () => {
 
     cy.get('[data-test="saveNewRestaurantButton"]').click();
 
-    cy.get('[data-test="newRestaurantNameError"]')
-      .contains('Cannot be blank');
+    cy.get('label[for="restaurantName"][data-error="Cannot be blank"]')
+      .should("be.visible");
 
     // modal allows adding restaurant
     cy.get('[data-test="newRestaurantName"]').type(restaurantName);
