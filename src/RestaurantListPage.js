@@ -26,7 +26,6 @@ render() {
         trigger={
           <Button data-test="addRestaurantButton">Add Restaurant</Button>
         }
-        actions
       >
         <NewRestaurantForm onSave={this.handleAddRestaurant} />
       </Modal>

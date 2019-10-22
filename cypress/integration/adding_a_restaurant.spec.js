@@ -11,14 +11,18 @@ describe('adding a restaurant', () => {
     cy.get('[data-test="addRestaurantModal"] button.modal-close').click();
 
     cy.get('[data-test="newRestaurantName"]').should("not.be.visible");
-    // modal allows adding restaurant
+
+    // modal displays validation errors
     cy.get('[data-test="addRestaurantButton"]').click();
 
-    // modal focuses on text field when appears
-    cy.focused().should();
+    cy.get('[data-test="saveNewRestaurantButton"]').click();
 
+    cy.get('[data-test="newRestaurantNameError"]')
+      .contains('Cannot be blank');
+
+    // modal allows adding restaurant
     cy.get('[data-test="newRestaurantName"]').type(restaurantName);
-    // confirm field has gone away
+
     cy.get('[data-test="saveNewRestaurantButton"]').click();
 
     cy.get('[data-test="newRestaurantName"]').should("not.be.visible");
