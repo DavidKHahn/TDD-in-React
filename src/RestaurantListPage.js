@@ -28,7 +28,7 @@ render() {
         data-test="addRestaurantModal"
         header="New Restaurant"
         trigger={
-          <Button data-test="addRestaurantButton">Add Restaurant</Button>
+          <Button data-testid="addRestaurantButton">Add Restaurant</Button>
         }
       >
         <NewRestaurantForm
