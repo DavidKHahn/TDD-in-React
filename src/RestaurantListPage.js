@@ -6,6 +6,10 @@ import RestaurantList from './RestaurantList';
 import { addRestaurant } from './store/restaurants/actions';
 
 class RestaurantListPage extends Component {
+componentDidMount() {
+  this.props.loadRestaurants();
+}
+
 handleAddRestaurant = newRestaurantName => {
   this.props.addRestaurant(newRestaurantName);
   $("#addRestaurantModal").modal("close");
