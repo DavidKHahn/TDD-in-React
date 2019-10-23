@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import { Button, Modal, Row } from 'react-materialize';
+import { connect } from 'react-redux';
 import NewRestaurantForm from './NewRestaurantForm';
 import RestaurantList from './RestaurantList';
+import { addRestaurant } from './store/restaurants/actions';
 
-export default class RestaurantListPage extends Component {
-    state = {
-      restaurantNames: [],
-    }
-
+class RestaurantListPage extends Component {
 handleAddRestaurant = newRestaurantName => {
-  this.setState(state => ({
-    restaurantNames: [newRestaurantName, ...state.restaurantNames],
-  }));
+  this.props.addRestaurant(newRestaurantName);
   $("#addRestaurantModal").modal("close");
 }
 
@@ -20,7 +16,7 @@ handleCancelAddRestaurant = () => {
 }
 
 render() {
-  const { restaurantNames } = this.state;
+  const { restaurants } = this.props;
   return (
     <div>
       <Modal
@@ -38,9 +34,21 @@ render() {
           />
       </Modal>
       <Row>
-        <RestaurantList restaurantNames={restaurantNames} />
+        <RestaurantList restaurantNames={restaurants} />
       </Row>
     </div>
   );
+ }
 }
+
+function mapStateToProps(state) {
+  return {
+    restaurants: state.restaurants,
+  };
 }
+
+const mapDispatchToProps = {
+  addRestaurant,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RestaurantListPage);
