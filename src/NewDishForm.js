@@ -1,6 +1,6 @@
 import { Formik } from 'formik';
 import React, { Component } from 'react';
-import { Input, Row } from 'react-materialize';
+import { Button, Input, Row } from 'react-materialize';
 
 export default class NewDishForm extends Component {
     handleSave = (values) => {
