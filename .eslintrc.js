@@ -9,6 +9,7 @@ module.exports = {
         'react',
     ],
     env: {
+        'es6': true,
         'browser': true,
         'jest/globals': true,
         'cypress/globals': true,

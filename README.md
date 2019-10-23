@@ -3,11 +3,11 @@
 **RULES TO FOLLOW WHEN TDD:**
 
     Red, Green and Refactor.
-    
-    "Write a failing test, a passing test and improve code." 
-    
+
+    "Write a failing test, a passing test and improve code."
+
        - A Senior Developer
-   
+
    **Feature Tours:** https://iamvery.com/2018/11/14/feature-tours.html (Pros and Cons behind Feature Tours approach)
 
 ### Tools Used:
@@ -72,4 +72,12 @@ Using Formik for form validation: https://github.com/jaredpalmer/formik
 **Redux**:
 
     yarn add redux react-redux redux-devtools-extension
+
+**Redux-Thunk**:
+
+    yarn add redux-thunk
+
+**Axios**:
+
+    yarn add axios
 
