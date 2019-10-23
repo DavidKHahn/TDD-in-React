@@ -2,9 +2,13 @@
 
 **RULES TO FOLLOW WHEN TDD:**
 
-    - Red, Green and Refactor.
-    - *Write a failing test, a passing test and improve code.*
-    - *Feature Tours:* https://iamvery.com/2018/11/14/feature-tours.html
+    Red, Green and Refactor.
+    
+    "Write a failing test, a passing test and improve code." 
+    
+       - A Senior Developer
+   
+   **Feature Tours:** https://iamvery.com/2018/11/14/feature-tours.html (Pros and Cons behind Feature Tours approach)
 
 ### Tools Used:
 
