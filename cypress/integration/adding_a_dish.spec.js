@@ -9,6 +9,7 @@ describe('adding a dish', () => {
         goToRestaurantPage(restaurantName);
         modalNotShownAtTheStart();
         modalAllowsAddingDish(dishName);
+        // dishesRetainedWhenLeavingPage(restaurantName, dishName);
     });
 
 
@@ -32,5 +33,11 @@ describe('adding a dish', () => {
     cy.get('[data-testid="saveNewDishButton"]').click();
     cy.get('[data-testid="newDishName"]').should("not.be.visible");
     cy.contains(dishName);
-  }
+    }
+
+//     function dishesRetainedWhenLeavingPage(restaurantName, dishName) {
+//         cy.get('[data-testid="backButton"]').click();
+//         cy.contains(restaurantName).click();
+//         cy.contains(dishName)
+//   }
 })

@@ -1,5 +1,11 @@
 ## TDD-in-React
 
+**RULES TO FOLLOW WHEN TDD:**
+
+    - Red, Green and Refactor.
+    - *Write a failing test, a passing test and improve code.*
+    - *Feature Tours:* https://iamvery.com/2018/11/14/feature-tours.html
+
 ### Tools Used:
 
 **Cypress**: Mainly used for end-to-end testing (similar to Mocha for test runner, Chai for expectations, Sinon for test doubles except Cypress runs all of these under the hood)
@@ -53,7 +59,13 @@ Return to CircleCI dashboard and run setup for the project being used.
 
 Using Formik for form validation: https://github.com/jaredpalmer/formik
 
-**React-Router-Dom**(https://reacttraining.com/react-router/web/guides/quick-start):
+**React-Router-Dom**:
+
+    https://reacttraining.com/react-router/web/guides/quick-start
 
     yarn add react-router-dom
+
+**Redux**:
+
+    yarn add redux react-redux redux-devtools-extension
 

@@ -15,10 +15,10 @@ describe('NewDishForm', () => {
     onSave={saveHandler} />));
 
       fireEvent.change(
-        getByTestId('newDishForm'),
+        getByTestId('newDishName'),
         {
           target: {
-            id: 'dishForm',
+            id: 'dishName',
             value: 'Tuna Sashimi'
           }
         });
@@ -31,7 +31,7 @@ describe('NewDishForm', () => {
       afterEach(cleanup);
 
       it('calls the onSave handler', () => {
-        expect(saveHandler).toHaveBeenCalledWith('Tuna Sashimi');
+        expect(saveHandler).toHaveBeenCalledWith("Tuna Sashimi");
     });
   });
 });
