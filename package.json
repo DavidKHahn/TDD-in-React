@@ -37,7 +37,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
     "lint": "eslint cypress/integration/**/*.js src test",
-    "unit": "jest test/**/*.spec.js",
+    "unit": "jest test",
     "e2e": "cypress open"
   },
   "keywords": [
