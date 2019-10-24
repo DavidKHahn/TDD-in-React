@@ -47,15 +47,27 @@ describe('restaurant actions', () => {
             attributes: {
                 name,
             },
-        }
-        const dispatch = jest.fn();
+        };
 
-        return addRestaurant(name)(dispatch)
-        .then(() => {
-            expect(dispatch).toHaveBeenCalledWith({
-                type: ADD_RESTAURANT,
+        let dispatch;
+
+        beforeEach(() => {
+            dispatch = jest.fn();
+            return addRestaurant(name)(dispatch)
+        });
+
+        it('sends the new restaurant to the server', () => {
+            expect(api.post).toHaveBeenCalledWith(
+                '/restaurants',
                 restaurant,
+            )
+        })
+
+        it('stores the new restaurant in the state', () => {
+                expect(dispatch).toHaveBeenCalledWith({
+                    type: ADD_RESTAURANT,
+                    restaurant,
+                })
             })
         })
     })
-})
