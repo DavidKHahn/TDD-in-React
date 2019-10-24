@@ -59,7 +59,8 @@ describe('restaurant actions', () => {
         it('sends the new restaurant to the server', () => {
             expect(api.post).toHaveBeenCalledWith(
                 '/restaurants',
-                restaurant,
+        // Note: api data should have 'data' key before passing in value
+                { data: restaurant },
             )
         })
 
