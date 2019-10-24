@@ -3,7 +3,7 @@ describe('adding a restaurant', () => {
     const initialRestaurantName = "Spaghetti Place";
     const restaurantName = 'Sushi Place';
 
-    setUpInitialRestaurant(initialRestaurantName)
+    setUpInitialRestaurant(initialRestaurantName, restaurantName)
     // visit the page
     cy.visit('http://localhost:1234');
 
@@ -20,7 +20,7 @@ describe('adding a restaurant', () => {
     modalAllowsAddingRestaurant(restaurantName);
   });
 
-  function setUpInitialRestaurant(restaurantName) {
+  function setUpInitialRestaurant(initalRestaurantName, addedRestaurantName) {
        // start fake server
        cy.server();
        // make route available
@@ -33,12 +33,26 @@ describe('adding a restaurant', () => {
                type: 'restaurants',
                id: '1',
                attributes: {
-                 name: restaurantName
+                 name: initalRestaurantName
                }
              }
            ]
          }
        })
+
+       cy.route({
+         method: 'POST',
+         url: 'restaurants',
+         response:  {
+          data: {
+            type: 'restaurants',
+            id: '2',
+            attributes: {
+                name: addedRestaurantName,
+            },
+          },
+      },
+    })
   }
 
   function restaurantsFromServerDisplayedAtStart(restaurantName) {
