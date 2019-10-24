@@ -16,8 +16,14 @@ export const loadRestaurants = () => (dispatch) => {
 };
 
 export const addRestaurant = (name) => {
+    const restaurant = {
+        type: 'restaurants',
+        attributes: {
+            name,
+        }
+    }
     return {
         type: ADD_RESTAURANT,
-        name
+        restaurant
     };
 };
