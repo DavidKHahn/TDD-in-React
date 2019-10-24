@@ -1,5 +1,5 @@
 import api from '../../../../src/store/api';
-import { loadRestaurants, STORE_RESTAURANTS } from '../../../../src/store/restaurants/actions';
+import { addRestaurant, ADD_RESTAURANT, loadRestaurants, STORE_RESTAURANTS } from '../../../../src/store/restaurants/actions';
 jest.mock('../../../../src/store/api');
 
 describe('restaurant actions', () => {
@@ -37,6 +37,25 @@ describe('restaurant actions', () => {
                         restaurants,
                     })
                 })
+        })
+    })
+
+    describe('addRestaurant', () => {
+        const name = 'Sushi Place';
+        const restaurant = {
+            type: 'restaurants',
+            attributes: {
+                name,
+            },
+        }
+        const dispatch = jest.fn();
+
+        return addRestaurant(name)(dispatch)
+        .then(() => {
+            expect(dispatch).toHaveBeenCalledWith({
+                type: ADD_RESTAURANT,
+                restaurant,
+            })
         })
     })
 })
